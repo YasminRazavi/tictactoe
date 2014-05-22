@@ -27,9 +27,9 @@
 </table>
 
 
-
+<% if current_user.id == @user.id %>
  <p3> <%= link_to 'Edit', edit_user_path(@user) %> </p3>
-
+<%end%>
 </div>
 
 
@@ -41,6 +41,7 @@
     <th>Game</th> 
     <th>Played against</th> 
     <th>Winner</th>
+    <th>Dimension</th>
     
   </tr>
 
@@ -57,10 +58,11 @@
       <%end%>
 
     <% if game.result.empty?%>
-    <td>both losers</td>
+    <td>No winner</td>
     <%else%>
       <td><%= image_tag(User.find(game.result.first).image, class: "thumbnailimage") %></td>   
     <%end%>
+    <td> <%= game.dimension%>
   </tr>
 <% end %>
 </table>

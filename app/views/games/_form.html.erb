@@ -16,6 +16,11 @@
     <%= f.select :player1, options_from_collection_for_select(User.all, "id", "name")%>
   </div>
 
+ <div class="field">
+
+ <%= f.label "Enter dimension:"%><br />
+ <%= f.text_field :dimension%>
+ </div>
   
   <div class="actions">
     <%= f.submit %>

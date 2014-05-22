@@ -68,7 +68,8 @@ class GamesController < ApplicationController
       player1: params[:game][:player1],
       player2: current_user.id,
       player1_sign: player1_sign,
-      player2_sign: player2_sign
+      player2_sign: player2_sign,
+      dimension: params[:game][:dimension]
     })
     redirect_to game_path(@game.id)
     

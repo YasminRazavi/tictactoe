@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140521155443) do
+ActiveRecord::Schema.define(:version => 20140522140313) do
 
   create_table "games", :force => true do |t|
     t.integer  "player1"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(:version => 20140521155443) do
     t.integer  "moves_no"
     t.string   "player1_sign"
     t.string   "player2_sign"
+    t.integer  "dimension"
   end
 
   create_table "moves", :force => true do |t|

@@ -14,9 +14,9 @@
 
 
 <table class="gameboard">
-  <% (0..2).each do |row| %>
+  <% (0..(@game.dimension-1)).each do |row| %>
     <tr>
-      <% (0..2).each do |column|%>
+      <% (0..(@game.dimension-1)).each do |column|%>
         <% if @table[row][column]==0%>  
           <td> </td>
         <%else%>

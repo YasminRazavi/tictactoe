@@ -181,9 +181,8 @@ margin-bottom: 0;
   margin-bottom: 0;
 }
 
-
-
-form {
+/*styling forms */
+/*form {
 
 font-size: 20px;
 margin-top: 100px;
@@ -211,7 +210,7 @@ float: left;
 
 }
 
-
+*/
 
 
 /* Styling the actual winner box in the game over page */

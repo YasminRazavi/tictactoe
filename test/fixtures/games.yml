@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  player_1,: MyString
+  player_2,: MyString
+  winner,: MyString
+  moves: MyString
+
+two:
+  player_1,: MyString
+  player_2,: MyString
+  winner,: MyString
+  moves: MyString

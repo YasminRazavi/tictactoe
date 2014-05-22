@@ -1,0 +1,32 @@
+<h1> !This Game Is Over! </h1> <br>
+<h1> <%=image_tag(User.find(@game.player1).image, class: "thumbnailimage") %> : <%= @game.player1_sign%> |  <%=image_tag(User.find(@game.player2).image, class: "thumbnailimage") %> : <%= @game.player2_sign%> </h1>
+
+
+
+
+<% if @result.empty? %>
+  <h3> You guys are both losers and suck </h3>
+<%else%> 
+
+  <h3 class="winnerbox">
+   <%= image_tag(User.find(@result).first.image, class: "thumbnailimage")%> <%= User.find(@result).first.name %> won!!!</h3>
+<%end%>
+
+
+<table class="gameboard">
+  <% (0..2).each do |row| %>
+    <tr>
+      <% (0..2).each do |column|%>
+        <% if @table[row][column]==0%>  
+          <td> </td>
+        <%else%>
+          <td><% if(@game.player1)==@table[row][column] %>
+                <%= @game.player1_sign %>
+              <%else%>
+                 <%= @game.player2_sign %>
+              <%end%></td>
+        <%end%>
+      <%end%>
+    </tr>
+  <%end%>
+</table>

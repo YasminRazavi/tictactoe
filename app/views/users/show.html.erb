@@ -1,0 +1,79 @@
+<p id="notice"><%= notice %></p>
+
+
+<div class="userheadr">
+  <div class="userheadrbackground"></div>
+  <p><%= image_tag(@user.image, class: "userimage") %> <p2> Welcome! </p2> <%= @user.name %> </p>
+
+<table class="user_stats">
+<tr>
+<th>Wins</th>
+<th>Losses</th>
+<th>Level</th>
+</tr>
+<% User.number_wins.each do |user_stats| %>
+  <% if user_stats[0] == @user.id %>
+     <td><%= user_stats[1]%></td> 
+     <td> <%= user_stats[2]%> </td>
+      <% if user_stats[1] > 5 %>
+          <td>High</td>
+          <% else%>
+          <td>Mehh</td>
+        <%end%>
+  <%end%>
+<%end%>
+
+</tr>
+</table>
+
+
+
+ <p3> <%= link_to 'Edit', edit_user_path(@user) %> </p3>
+
+</div>
+
+
+<h3 class="table_title"> Game feed</h3>
+
+<table class="usertable">
+  
+  <tr>
+    <th>Game</th> 
+    <th>Played against</th> 
+    <th>Winner</th>
+    
+  </tr>
+
+ <!--  ## Move this to helper -->
+<% @user.games.uniq.each do |game| %>
+
+  <tr  height= "100">
+    <td><%= link_to game.id, game_path(game) %></td> 
+     <% if @user.id == game.player1 %>
+     <td> <%= image_tag(User.find(game.player2).image, class: "thumbnailimage") %><%= User.find(game.player2).name %></td> 
+     <%else%>
+    <td> <%= image_tag(User.find(game.player1).image, class: "thumbnailimage") %> <%= 
+        User.find(game.player1).name %> </td> 
+      <%end%>
+
+    <% if game.result.empty?%>
+    <td>both losers</td>
+    <%else%>
+      <td><%= image_tag(User.find(game.result.first).image, class: "thumbnailimage") %></td>   
+    <%end%>
+  </tr>
+<% end %>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+

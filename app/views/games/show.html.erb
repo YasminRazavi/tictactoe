@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+<p>
+   <%=image_tag(User.find(@game.player1).image, class: "thumbnailimage")%> <%= User.find(@game.player1).name%> is <%=@game.player1_sign%> and is 
+ going against <br>  
+  <%=image_tag(User.find(@game.player2).image, class: "thumbnailimage")%> <%= User.find(@game.player2).name%>  who is <%=@game.player2_sign%> 
+</p>
+
+
+<div class="game_area">
+<table  class="gameboard">
+  <% (0..2).each do |row| %>
+    <tr >
+      <% (0..2).each do |column|%>
+        <% if @table[row][column]==0%> 
+          <% if @current_turn == current_user.id %> 
+            <td><%= link_to "__", new_move_path(@move,:row => row.to_s, :column => column.to_s, :user_id => @current_turn, :game_id => @game.id) %>  </td>
+          <% else %>
+            <td> X </td>
+          <%end%>
+        <%else%>
+          <td><% if(@game.player1)==@table[row][column] %>
+                <%= @game.player1_sign %>
+              <%else%>
+                 <%= @game.player2_sign %>
+              <%end%></td>
+        <%end%>
+      <%end%>
+    </tr>
+  <%end%>
+</table>
+
+<table  class="gamesidetable">
+
+<th>Moves made so far...</th>
+<% @game.moves.each do |move| %>
+<tr>
+  <td><%=image_tag(move.user.image, class: "thumbnailimage") %> played row: <%=move.row%>
+column: <%=move.column%></td>
+</tr>
+<%end%>
+
+
+</table>
+
+</div>

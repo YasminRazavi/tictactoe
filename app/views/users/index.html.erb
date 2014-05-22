@@ -1,0 +1,59 @@
+<h1>Here are all the folks loving this game:</h1>
+
+<table class=""
+
+
+
+
+
+<% User.number_wins.each do |user_stats| %>
+  <% if user_stats[0] == @user.id %>
+     <td><%= user_stats[1]%></td> 
+     <td> <%= user_stats[2]%> </td>
+      <% if user_stats[1] > 5 %>
+          <td>High</td>
+          <% else%>
+          <td>Mehh</td>
+        <%end%>
+  <%end%>
+<%end%>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table>
+  <tr>
+    <th>Name,</th>
+    <th>Image,</th>
+    <th>Email,</th>
+    <th>Age</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @users.each do |user| %>
+  <tr>
+    <td><%= user.name %></td>
+    <td><%= user.image %></td>
+    <td><%= user.email %></td>
+    <td><%= user.age %></td>
+    <td><%= link_to 'Show', user %></td>
+    <td><%= link_to 'Edit', edit_user_path(user) %></td>
+    <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New User', new_user_path %>

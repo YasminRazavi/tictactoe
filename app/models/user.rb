@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   attr_accessible :age, :email, :image, :name, :password, :password_confirmation
   has_secure_password
   has_many :moves
-  has_many :games, through: :moves
+  has_many :games, through: :moves, :class_name=> "Game", :foreign_key => "game_id"
 
 
   def self.number_wins    

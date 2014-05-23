@@ -7,7 +7,7 @@ gem 'rails', '3.2.17'
 
 gem 'pg'
 gem 'cancan'
-gem 'will_paginate'
+gem 'will_paginate', '~> 3.0'
 gem 'ransack'
 gem "bcrypt-ruby", "~> 3.0.0"
 gem 'carrierwave', "~> 0.9.0"

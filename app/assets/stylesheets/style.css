@@ -13,7 +13,7 @@ background: #F8F8FF;
 nav.navigation{
 background:#008080;
 width:100%;
-height:50px;
+height:58px;
 -webkit-box-shadow: 0px -1px 30px rgba(50, 50, 50, 0.75);
 -moz-box-shadow:    0px -1px 30px rgba(50, 50, 50, 0.75);
 box-shadow:         0px -1px 30px rgba(50, 50, 50, 0.75);
@@ -27,8 +27,8 @@ font-family:verdana;
 padding-right:20px;
 padding-left:20px;
 line-height:50px;
-padding-top:17px;
-padding-bottom:16px;
+padding-top:35px;
+padding-bottom:5px;
 transition:.1s;
 margin-left:10px;
 margin-right:10px;
@@ -81,20 +81,83 @@ font-size:30px;
 .field{
 
 font-family:'josefin sans';
-color: darkgrey;
-font-size:20px;
+color: lightgrey;
+font-size:40px;
 height: 60px;
+text-align: center;
+float: center;
+
+}
+
+.field input{
+
+  height: 40px;
+  width: 30%;
+  font-size: 15px;
+  font-style: italic;
+  font-family: "verdana";
+  background-color: lightgrey;
+  border:2px solid darkgrey;
+}
+
+.actions input{
+
+  
+  text-align: center;
+  float: center;
+  width: 15%;
+  height: 40px;
+  margin-left: 700px;
+  background: #008080;
+  font-family: "verdana";
+  font-size: 15px;
+  color: white;
+  border-radius: 10px;
+  padding: 5px;
+  border:none;
+
 
 
 }
 
+.actions2 input{
+
+  width: 15%;
+  height: 40px;
+  margin-left: 700px;
+  background: #008080;
+  font-family: "verdana";
+  font-size: 15px;
+  color: white;
+  border-radius: 10px;
+  padding: 5px;
+  border:none;
+
+}
+
+
+select{
+
+
+width: 30%;
+background-color: lightgrey;
+border: none;
+height: 40px;
+-webkit-appearance: none;
+border-radius: -10px;
+font-family: "verdana";
+font-size: 15px;
+color: black;
+padding-left: 10px;
+
+}
 
 /* styling the user stats table */
 .user_stats {
 
 border: 2px solid lightgrey;
 
-margin-left: 650px;
+margin-left: 620px;
 position: absolute;
 margin-top: 190px;
 background-color: lightgrey;
@@ -106,6 +169,7 @@ background-color: lightgrey;
 
 border-bottom: 2px solid lightgrey;
 font-family: 'josefin sans';
+padding-left: 10px;
 
 
 }
@@ -115,6 +179,7 @@ font-family: 'josefin sans';
 font-family: 'verdana';
 color:green;
 font-style: bold;
+
 
 }
 
@@ -181,36 +246,7 @@ margin-bottom: 0;
   margin-bottom: 0;
 }
 
-/*styling forms */
-/*form {
 
-font-size: 20px;
-margin-top: 100px;
-margin-left: 200px;
-}
-
-form select{
-   background: url("http://cdn.bavotasan.com/wp-content/uploads/2011/05/down_arrow_select.jpg") no-repeat right #ddd;
-   width: 400px;
-   padding: 5px;
-   font-size: 16px;
-   line-height: 1;
-   border: 0;
-   border-radius: 1.5;
-   height: 50px;
-   -webkit-appearance: none;
-}
-
-input{
-width: 400px;
-height: 50px;
-padding: 5px;
-margin-top: 50px;
-float: left;  
-
-}
-
-*/
 
 
 /* Styling the actual winner box in the game over page */
@@ -236,6 +272,8 @@ padding: 5px;
   border: 1px solid darkgrey;
   width:25%;
   font-family: "verdana";
+  border-radius: 4px;
+  padding-left: 5px;
 
 }
 
@@ -246,14 +284,16 @@ font-family: "verdana";
 color: white;
 background-color: darkgrey;
 text-align: left;
-
+height: 45px;
+border-radius: 5px;
+padding-left: 10px;
 
 }
 
 
 .table_title {
 
-margin-left: 450px;
+margin-left: 300px;
 font-size: 30px;
 
 }
@@ -263,10 +303,10 @@ font-size: 30px;
 
 .Leader_table{
 
-border: 5px solid darkgrey;
-  
+  border: 5px solid darkgrey; 
   margin: 20px auto 0;  
   width: 70%;
+ 
 }
 
 .Leader_table th {
@@ -275,6 +315,9 @@ font-family: "verdana";
 color: white;
 background-color: darkgrey;
 text-align: left;
+ height: 40px;
+border-radius: 5px;
+padding-left: 10px;
 
 
 }
@@ -283,6 +326,8 @@ text-align: left;
   border: 1px solid lightgrey;
   font-family: "verdana";
   color: darknavy;
+  border-radius: 3px;
+  padding-left: 10px;
 }
 
 
@@ -340,4 +385,156 @@ color: darkgrey;
 
 }
 
+
+.game_over_board{
+
+  width: 600px;
+  height: 500px;
+  border: 10px solid black;
+  float: left;
+  background-color: lightgrey;
+  margin-left: 400px;
+}
+
+  .game_over_board tr {
+  border: 5px solid white;
+  background-color: black;
+  color: white;
+  font-size: 40px;
+  text-align: center;
+  font-family: "Comic Sans MS", cursive, sans-serif;}
+
+
+
+.welcome_page{
+  background: url("http://game-icons.net/icons/delapouite/originals/png/tic-tac-toe.png");
+  background-repeat:repeat;
+  opacity: 2;
+
+}
+
+.welcome_page h1 {
+  font-family: "verdana";
+  color:#008080;
+  font-size: 100px;
+  text-align: center;
+  margin-top: 214px;
+  border:5px solid red;
+  background: lightgrey;
+  opacity: 0.8;
+
+}
+
+
+
+
+
+
+/** Pagination **/
+
+
+.digg_pagination {
+  background: white;
+  cursor: default;
+  /* self-clearing method: */ }
+  .digg_pagination a, .digg_pagination span, .digg_pagination em {
+    padding: 0.2em 0.5em;
+    display: block;
+    float: left;
+    margin-right: 1px; }
+  .digg_pagination .disabled {
+    color: #999999;
+    border: 1px solid #dddddd; }
+  .digg_pagination .current {
+    font-style: normal;
+    font-weight: bold;
+    background: #2e6ab1;
+    color: white;
+    border: 1px solid #2e6ab1; }
+  .digg_pagination a {
+    text-decoration: none;
+    color: #105cb6;
+    border: 1px solid #9aafe5; }
+    .digg_pagination a:hover, .digg_pagination a:focus {
+      color: #000033;
+      border-color: #000033; }
+  .digg_pagination .page_info {
+    background: #2e6ab1;
+    color: white;
+    padding: 0.4em 0.6em;
+    width: 22em;
+    margin-bottom: 0.3em;
+    text-align: center; }
+    .digg_pagination .page_info b {
+      color: #000033;
+      background: #6aa6ed;
+      padding: 0.1em 0.25em; }
+  .digg_pagination:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+  * html .digg_pagination {
+    height: 1%; }
+  *:first-child + html .digg_pagination {
+    overflow: hidden; }
+
+.apple_pagination {
+  background: #f1f1f1;
+  border: 1px solid #e5e5e5;
+  text-align: center;
+  padding: 1em;
+  cursor: default; }
+  .apple_pagination a, .apple_pagination span {
+    padding: 0.2em 0.3em; }
+  .apple_pagination .disabled {
+    color: #aaaaaa; }
+  .apple_pagination .current {
+    font-style: normal;
+    font-weight: bold;
+    background-color: #bebebe;
+    display: inline-block;
+    width: 1.4em;
+    height: 1.4em;
+    line-height: 1.5;
+    -moz-border-radius: 1em;
+    -webkit-border-radius: 1em;
+    border-radius: 1em;
+    text-shadow: rgba(255, 255, 255, 0.8) 1px 1px 1px; }
+  .apple_pagination a {
+    text-decoration: none;
+    color: black; }
+    .apple_pagination a:hover, .apple_pagination a:focus {
+      text-decoration: underline; }
+
+.flickr_pagination {
+  text-align: center;
+  padding: 0.3em;
+  cursor: default; }
+  .flickr_pagination a, .flickr_pagination span, .flickr_pagination em {
+    padding: 0.2em 0.5em; }
+  .flickr_pagination .disabled {
+    color: #aaaaaa; }
+  .flickr_pagination .current {
+    font-style: normal;
+    font-weight: bold;
+    color: #ff0084; }
+  .flickr_pagination a {
+    border: 1px solid #dddddd;
+    color: #0063dc;
+    text-decoration: none; }
+    .flickr_pagination a:hover, .flickr_pagination a:focus {
+      border-color: #003366;
+      background: #0063dc;
+      color: white; }
+  .flickr_pagination .page_info {
+    color: #aaaaaa;
+    padding-top: 0.8em; }
+  .flickr_pagination .previous_page, .flickr_pagination .next_page {
+    border-width: 2px; }
+  .flickr_pagination .previous_page {
+    margin-right: 1em; }
+  .flickr_pagination .next_page {
+    margin-left: 1em; }
 

@@ -18,7 +18,7 @@
   <td><%= image_tag(User.find(user_stats[0]).image, class: "thumbnailimage") %><%= link_to "#{User.find(user_stats[0]).name}", user_path(user_stats[0]) %> </td>
      <td><%= user_stats[1]%></td> 
      <td> <%= user_stats[2]%> </td>
-      <% if user_stats[1] > 5 %>
+      <% if user_stats[1] > 10 %>
           <td>High</td>
           <% else%>
           <td>Mehh</td>

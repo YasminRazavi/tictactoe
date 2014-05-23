@@ -11,18 +11,15 @@
     </div>
   <% end %>
 
-   <div class="field">
-    <%= f.label "Play against:"%><br />
-    <%= f.select :player1, options_from_collection_for_select(User.all, "id", "name")%>
-  </div>
-
- <div class="field">
-
- <%= f.label "Enter dimension:"%><br />
- <%= f.text_field :dimension%>
- </div>
+ 
+    <div class ="newgame field">
+    <%= f.select :player1, options_from_collection_for_select(User.all, "id", "name"), placeholder: "play against"%> <br>
+    </div>
+    <div class ="newgame field">
+  <%= f.text_field :dimension, placeholder: "dimension"%> <br>
+     </div>
   
-  <div class="actions">
+  <div class="actions2">
     <%= f.submit %>
   </div>
 <% end %>

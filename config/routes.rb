@@ -7,14 +7,11 @@ Tictactoe::Application.routes.draw do
 
   resources :games
   match "games/:id/game_over", to: 'game#game_over',    via: 'post'
-
-
-
-
-
   resources :sessions, only: [:new, :create, :destroy]
 
   get "/login", to: "sessions#new"
+
+  get "/", to: "games#welcome", via: 'get'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

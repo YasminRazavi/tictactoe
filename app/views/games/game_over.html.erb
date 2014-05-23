@@ -2,7 +2,23 @@
 <h1> <%=image_tag(User.find(@game.player1).image, class: "thumbnailimage") %> : <%= @game.player1_sign%> |  <%=image_tag(User.find(@game.player2).image, class: "thumbnailimage") %> : <%= @game.player2_sign%> </h1>
 
 
+<head>
 
+<% if User.find(@result).first.id == current_user.id %>
+  <script>if(typeof jQuery=='undefined'){document.write('<'+'script');document.write(' language="javascript"');document.write(' type="text/javascript"');document.write(' src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js">');document.write('</'+'script'+'>')}</script><script>if(!image_urls){var image_urls=Array()}if(!flash_urls){var flash_urls=Array()}image_urls['rain1']="http://www.picgifs.com/glitter-gifs/h/hearts/picgifs-hearts-9460196.gif";image_urls['rain2']="http://www.picgifs.com/glitter-gifs/h/hearts/picgifs-hearts-9460196.gif";image_urls['rain3']="http://www.picgifs.com/glitter-gifs/h/hearts/picgifs-hearts-9460196.gif";image_urls['rain4']="http://www.picgifs.com/glitter-gifs/h/hearts/picgifs-hearts-9460196.gif";$(document).ready(function(){var c=$(window).width();var d=$(window).height();var e=function(a,b){return Math.round(a+(Math.random()*(b-a)))};var f=function(a){setTimeout(function(){a.css({left:e(0,c)+'px',top:'-30px',display:'block',opacity:'0.'+e(10,100)}).animate({top:(d-10)+'px'},e(7500,8000),function(){$(this).fadeOut('slow',function(){f(a)})})},e(1,8000))};$('<div></div>').attr('id','rainDiv')
+  .css({position:'fixed',width:(c-20)+'px',height:'1px',left:'0px',top:'-5px',display:'block'}).appendTo('body');for(var i=1;i<=20;i++){var g=$('<img/>').attr('src',image_urls['rain'+e(1,4)])
+  .css({position:'absolute',left:e(0,c)+'px',top:'-30px',display:'block',opacity:'0.'+e(10,100),'margin-left':0}).addClass('rainDrop').appendTo('#rainDiv');f(g);g=null};var h=0;var j=0;$(window).resize(function(){c=$(window).width();d=$(window).height()})});</script>
+  <script>if(typeof jQuery=='undefined'){document.write('<'+'script');document.write(' language="javascript"');document.write(' type="text/javascript"');document.write(' src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js">');document.write('</'+'script'+'>')}</script>
+
+<% else%>
+  <script>if(typeof jQuery=='undefined'){document.write('<'+'script');document.write(' language="javascript"');document.write(' type="text/javascript"');document.write(' src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js">');document.write('</'+'script'+'>')}</script><script>if(!image_urls){var image_urls=Array()}if(!flash_urls){var flash_urls=Array()}image_urls['rain1']="http://www.picgifs.com/baby-graphics/baby-graphics/crying/baby-graphics-crying-533424.gif";image_urls['rain2']="http://www.picgifs.com/baby-graphics/baby-graphics/crying/baby-graphics-crying-533424.gif";image_urls['rain3']="http://www.picgifs.com/baby-graphics/baby-graphics/crying/baby-graphics-crying-533424.gif";image_urls['rain4']="http://www.picgifs.com/baby-graphics/baby-graphics/crying/baby-graphics-crying-533424.gif";$(document).ready(function(){var c=$(window).width();var d=$(window).height();var e=function(a,b){return Math.round(a+(Math.random()*(b-a)))};var f=function(a){setTimeout(function(){a.css({left:e(0,c)+'px',top:'-30px',display:'block',opacity:'0.'+e(10,100)}).animate({top:(d-10)+'px'},e(7500,8000),function(){$(this).fadeOut('slow',function(){f(a)})})},e(1,8000))};$('<div></div>').attr('id','rainDiv')
+  .css({position:'fixed',width:(c-20)+'px',height:'1px',left:'0px',top:'-5px',display:'block'}).appendTo('body');for(var i=1;i<=20;i++){var g=$('<img/>').attr('src',image_urls['rain'+e(1,4)])
+  .css({position:'absolute',left:e(0,c)+'px',top:'-30px',display:'block',opacity:'0.'+e(10,100),'margin-left':0}).addClass('rainDrop').appendTo('#rainDiv');f(g);g=null};var h=0;var j=0;$(window).resize(function(){c=$(window).width();d=$(window).height()})});</script>
+  <script>if(typeof jQuery=='undefined'){document.write('<'+'script');document.write(' language="javascript"');document.write(' type="text/javascript"');document.write(' src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js">');document.write('</'+'script'+'>')}</script>
+
+<%end%>
+
+</head>
 
 <% if @result.empty? %>
   <h3> You guys are both losers and suck </h3>
@@ -13,7 +29,7 @@
 <%end%>
 
 
-<table class="gameboard">
+<table class="game_over_board">
   <% (0..(@game.dimension-1)).each do |row| %>
     <tr>
       <% (0..(@game.dimension-1)).each do |column|%>

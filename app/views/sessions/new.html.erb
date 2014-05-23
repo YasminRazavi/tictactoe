@@ -1,13 +1,13 @@
 <h1>Awhhh welcome back!</h1>
 <%= form_tag sessions_path, method: :post do %>
   <div class="field">
-    <%= label_tag :email %>
-    <%= text_field_tag :email %>
+   
+    <%= text_field_tag :email,  "email..." %>
   </div>
 
   <div class="field">
-    <%= label_tag :password %>
-    <%= text_field_tag :password %>
+   
+    <%= password_field_tag  :password, "password..." %>
   </div>
 
   <div class="actions">

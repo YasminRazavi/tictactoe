@@ -1,3 +1,9 @@
+
+<% if @game.player1 == 1%>
+<% else %>
+  <meta http-equiv="refresh" content="10">
+<%end%>
+
 <p id="notice"><%= notice %></p>
 <p>
    <%=image_tag(User.find(@game.player1).image, class: "thumbnailimage")%> <%= User.find(@game.player1).name%> is <%=@game.player1_sign%> and is 

@@ -20,6 +20,6 @@ class SessionsController < ApplicationController
   # Signout
   def destroy
     session[:user_id] = nil
-    redirect_to games_path
+    redirect_to "/"
   end
 end

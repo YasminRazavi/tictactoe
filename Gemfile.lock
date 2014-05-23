@@ -160,4 +160,4 @@ DEPENDENCIES
   rmagick
   sass-rails (~> 3.2.3)
   uglifier (>= 1.0.3)
-  will_paginate
+  will_paginate (~> 3.0)

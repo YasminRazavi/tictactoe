@@ -99,4 +99,9 @@ class GamesController < ApplicationController
     end
   end
 
+
+  def welcome
+
+    render :welcome
+  end
 end

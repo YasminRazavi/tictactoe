@@ -10,17 +10,20 @@
 
 <header>
   <nav class="navigation">
-    <%= link_to "Leader board", games_path,class: "nav" %>
+    
     <% if current_user  %>
+          <%= image_tag(current_user.image, class: "thumbnailimage") %>
           <%= link_to "Profile", user_path(current_user),class: "nav" %>
           <% if games_path %>
             <%= link_to 'New Game', new_game_path, class: "nav" %>
+            <%= link_to "Leader board", games_path,class: "nav" %>
           <%end%>
 
           <div class = "logoutnav">
           <%= link_to "Logout", session_path(session) , method: :delete, confirm: "Are you sure you want to log out ?", class: "nav"%> 
           </div>
       <% else %>
+
       
         <%= link_to "Login", new_session_path, class: "nav" %>
         

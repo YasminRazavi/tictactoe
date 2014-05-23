@@ -33,7 +33,7 @@
 </div>
 
 
-<h3 class="table_title"> Game feed</h3>
+<h3 class="table_title"> game feed</h3>
 
 <table class="usertable">
   
@@ -46,7 +46,7 @@
   </tr>
 
  <!--  ## Move this to helper -->
-<% @user.games.uniq.each do |game| %>
+<% @user_games.each do |game| %>
 
   <tr  height= "100">
     <td><%= link_to game.id, game_path(game) %></td> 
@@ -67,6 +67,8 @@
 <% end %>
 </table>
 
+
+<%= will_paginate @user_games, class: "apple_pagination" %>
 
 
 

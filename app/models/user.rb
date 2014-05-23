@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
         wins = user.user_wins
         @result_board << [user.id, wins, user.games.count]
       end
-    @result_board
+    @result_board.sort! {|a,b| b[1] <=> a[1]}
   end
 
 
